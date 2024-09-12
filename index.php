@@ -1,34 +1,38 @@
 <?php
 
-$stringOne = 'My email is ';
-$stringTwo = 'emmy123@gmail.com';
+    $radius = 25;
+    $pi = 3.14;
+    $age = 30;
 
-// echo $stringOne . $stringTwo;
+    // basic operators: *, +, /, -, **
 
-$name = 'Mario';
-$course = 'PHP';
-
-// echo 'Hey my name is' . $name;
+    echo $radius ** $pi;
 
 
-// // using variable interpolation:   using double quote allow php notice the variable without concatenation.
-// echo "i am a $course developer";   
+
+    // order ofoperation ( B I D M A S )
+
+    echo 2 * (4 + 9) / 3;
 
 
-// // escaping characters: adding qoutes to a string
-// echo "did you say your name is \"Mario\"?      ";
-// echo 'did you say your email is "emmy123@gmail.com"?';
+
+    // increament and decreament operator
+    echo $radius++;     // increase by 1
+    echo $radius--;     // decrease by 1
 
 
-// // finding characters using index
-// echo $name[1];
+    // shorthand operators
+     echo $age += 10;
+     echo $age -= 10;
+    echo $age **= 2;
 
 
-// // String functions
-// echo strlen($stringOne);         // finding length of a string.
-echo strtoupper($stringOne . '');        // change string to upper case
-echo strtolower($stringOne . '');        // change string to lower case
-echo str_replace('m', 'w', $stringTwo);          // replace m(1st arguements) with w(2nd arguements)  in the variable or string(3rd arguments)
+    // number functions
+    echo floor($pi);     // floor to the round number
+    echo ceil($pi);     // take the value after decimal and add to the whole number as plus 1
+    
+
+
 
 ?>
 
