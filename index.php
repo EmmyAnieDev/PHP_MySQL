@@ -1,66 +1,44 @@
 <?php
 
-// // loops
+// // comparisons booleans: (true or false)
+// echo true;     // returns string of 1 since the browser returns string of text
+// echo flase;     // returns empty string
 
-for ($i = 0; $i < 10; $i++)
-{
-    // echo 'i is lesser than 10   ';
-}
+// // numbers
+// echo 5 > 10;
+// echo 5 < 10;
+// echo 5 == 10;
+// echo 5 != 10;
+// echo 5 >= 10;
+// echo 5 <= 10;
+
+// strings
+// echo 'shaun' < 'yoshi';      //  compare alpahabatically
+// echo 'shaun' > 'yoshi';  
+// echo 'shaun' == 'soshi';  
+// echo 'mario' == 'mario';
+// echo 'mario'  == 'Mario';
 
 
-$names = ['John', 'Derek', 'Tommy', 'Kelvin', 'Francine'];
 
-for ($i = 0; $i < count($names); $i++)
-{
-    // echo 'i is lesser than 10   ';
-}
 
-foreach($names as $name)  // looping through each items in the array
-{
-    // echo $name . '<br />';
-}
+// // loose vs trict equal comparison
+// echo 5 == '5';            // loose don't take consioderation of the data type
+// echo 5 === '5';           //  strict comparison take consioderation of the data type
+// echo 5 === 5;               // return true since both are same data type
 
-$products = [
-    ['name' => 'shiny star', 'price' => 20],
-    ['name' => 'green shell', 'price' => 10],
-    ['name' => 'red shell', 'price' => 15],
-    ['name' => 'gold coin', 'price' => 5],
-    ['name' => 'lightning bolt', 'price' => 40],
-    ['name' => 'banana skin', 'price' => 2]
-];
-
-foreach($products as $product)  // looping through each items in the array
-{
-    // echo $product['name'] . ' - ' . $product['price'] . '<br />';
-}
-
-$value = 1;
-$totalProduct = count($products);
-
-while ($value < $totalProduct)     // while loop runs until a conditions return true.
-{
-    // echo "value [$value] is lower than length of products [$totalProduct] <br />";
-    $value++;
-    if(($value == $totalProduct)){
-     //   echo "value [$value] is equal to length of products [$totalProduct]";
-    }
-}
-
+echo true == '1';
+echo false == '';
 
 ?>
 
 <html>
     <head>
-        <title> Loops </title>
+        <title> Booleans </title>
     </head>
     <body>
-     <h1>products</h1>
-      <ul>
-        <?php foreach($products as $product) { ?>
-            <h3> <?php echo $product['name'] ?> </h3>
-            <p> <?php echo $product['price'] ?> </p>
-        <?php } ?>
-      </ul>
+  
+    
     </body>
 </html>
 
