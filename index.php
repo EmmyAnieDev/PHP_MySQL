@@ -1,39 +1,62 @@
 <?php
 
-    $radius = 25;
-    $pi = 3.14;
-    $age = 30;
+// // Indexed arrays:    We use index to access and manipulate the arrays.
 
-    // basic operators: *, +, /, -, **
+$peopleOne = ['Shaun', 'Mairo', 'Crystal', 'Ryu'];
 
-    echo $radius ** $pi;
+// print_r($peopleOne);    // print readeable
 
 
+$peopleTwo = array('Adam', 'Becky', 'Helen', 'Zara');
 
-    // order ofoperation ( B I D M A S )
+$allPeople = array_merge($peopleOne, $peopleTwo);    // merging two arrays
 
-    echo 2 * (4 + 9) / 3;
+// print_r($allPeople);
 
+// echo $allPeople;
 
+$ages = [20, 34, 18, 27];   // can't use echo since it returns a string
+// print_r($ages);   // print readeable
 
-    // increament and decreament operator
-    echo $radius++;     // increase by 1
-    echo $radius--;     // decrease by 1
+$ages[1] = 22;   // modify the array for a particular index
+// print_r($ages); 
 
+$ages[] = 44;    // add a new data to the array
+// print_r($ages)
 
-    // shorthand operators
-     echo $age += 10;
-     echo $age -= 10;
-    echo $age **= 2;
+array_push($ages, 70);    // add a new data to the end of the array. 
+// print_r($ages);
 
-
-    // number functions
-    echo floor($pi);     // floor to the round number
-    echo ceil($pi);     // take the value after decimal and add to the whole number as plus 1
-    
+// echo count($ages);
 
 
 
+
+//  // associative arrays:       these are key value pairs
+
+$ninjasOne = ['shaun'=>'black', 'mario'=>'orange', 'luigi'=>'red'];
+// print_r($ninjasOne);
+
+// echo $ninjasOne['mario'];    // access a value using its key
+
+$ninjasTwo = array('bowser'=>'green', 'peach'=>'yellow');
+// print_r($ninjasTwo);
+
+$ninjasTwo['ball'] = 'grey';    // add a new value
+// print_r($ninjasTwo);
+
+$ninjasTwo['peach'] = 'blue';    // override or modify a value
+// print_r($ninjasTwo);
+
+// echo count($ninjasOne);
+
+$totalNinjas = array_merge($ninjasOne, $ninjasTwo);
+print_r($totalNinjas);
+
+
+
+
+// // multidimensional arrays
 ?>
 
 <html>
