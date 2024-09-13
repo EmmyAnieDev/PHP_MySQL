@@ -1,44 +1,66 @@
 <?php
 
-// // multi-dimensional arrays
+// // loops
 
-// // index multi-dimensional array
-$blogs = [    
-    ['mario party', 'mario', 'lorem', 30],
-    ['mario kart cheats', 'toad', 'lorem', 25],
-    ['zelda hidden chest', 'link', 'lorem', 50],
-];      
+for ($i = 0; $i < 10; $i++)
+{
+    // echo 'i is lesser than 10   ';
+}
 
-// print_r($blogs);
-// print_r($blogs[0]);
-// print_r($blogs[0][2]);
 
-// // associate multi-dimensional array
-$blogs2 = [    
-    ['title' => 'mario party', 'author' => 'mario', 'content' => 'lorem', 'likes' => 30],
-    ['title' => 'mario kart cheats', 'author' => 'toad', 'content' => 'lorem','likes' =>  25],
-    ['title' => 'zelda hidden chest', 'author' => 'link', 'content' => 'lorem','likes' =>  50],
-];      
+$names = ['John', 'Derek', 'Tommy', 'Kelvin', 'Francine'];
 
-// print_r($blogs2);
-// print_r($blogs2[2]['title']);
-// $blogs2[2]['title'] = 'always on the moon';
-// print_r($blogs2[2]['title']);
-// echo count($blogs2[1]);
+for ($i = 0; $i < count($names); $i++)
+{
+    // echo 'i is lesser than 10   ';
+}
 
-$popped = array_pop($blogs2);     // POP THE LAST ARRAY AND STORE.
-print_r($popped);
+foreach($names as $name)  // looping through each items in the array
+{
+    // echo $name . '<br />';
+}
+
+$products = [
+    ['name' => 'shiny star', 'price' => 20],
+    ['name' => 'green shell', 'price' => 10],
+    ['name' => 'red shell', 'price' => 15],
+    ['name' => 'gold coin', 'price' => 5],
+    ['name' => 'lightning bolt', 'price' => 40],
+    ['name' => 'banana skin', 'price' => 2]
+];
+
+foreach($products as $product)  // looping through each items in the array
+{
+    // echo $product['name'] . ' - ' . $product['price'] . '<br />';
+}
+
+$value = 1;
+$totalProduct = count($products);
+
+while ($value < $totalProduct)     // while loop runs until a conditions return true.
+{
+    // echo "value [$value] is lower than length of products [$totalProduct] <br />";
+    $value++;
+    if(($value == $totalProduct)){
+     //   echo "value [$value] is equal to length of products [$totalProduct]";
+    }
+}
 
 
 ?>
 
 <html>
     <head>
-        <title> Strings </title>
+        <title> Loops </title>
     </head>
     <body>
-     
-      
+     <h1>products</h1>
+      <ul>
+        <?php foreach($products as $product) { ?>
+            <h3> <?php echo $product['name'] ?> </h3>
+            <p> <?php echo $product['price'] ?> </p>
+        <?php } ?>
+      </ul>
     </body>
 </html>
 
