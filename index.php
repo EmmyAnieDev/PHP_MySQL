@@ -1,62 +1,35 @@
 <?php
 
-// // Indexed arrays:    We use index to access and manipulate the arrays.
+// // multi-dimensional arrays
 
-$peopleOne = ['Shaun', 'Mairo', 'Crystal', 'Ryu'];
+// // index multi-dimensional array
+$blogs = [    
+    ['mario party', 'mario', 'lorem', 30],
+    ['mario kart cheats', 'toad', 'lorem', 25],
+    ['zelda hidden chest', 'link', 'lorem', 50],
+];      
 
-// print_r($peopleOne);    // print readeable
+// print_r($blogs);
+// print_r($blogs[0]);
+// print_r($blogs[0][2]);
 
+// // associate multi-dimensional array
+$blogs2 = [    
+    ['title' => 'mario party', 'author' => 'mario', 'content' => 'lorem', 'likes' => 30],
+    ['title' => 'mario kart cheats', 'author' => 'toad', 'content' => 'lorem','likes' =>  25],
+    ['title' => 'zelda hidden chest', 'author' => 'link', 'content' => 'lorem','likes' =>  50],
+];      
 
-$peopleTwo = array('Adam', 'Becky', 'Helen', 'Zara');
+// print_r($blogs2);
+// print_r($blogs2[2]['title']);
+// $blogs2[2]['title'] = 'always on the moon';
+// print_r($blogs2[2]['title']);
+// echo count($blogs2[1]);
 
-$allPeople = array_merge($peopleOne, $peopleTwo);    // merging two arrays
-
-// print_r($allPeople);
-
-// echo $allPeople;
-
-$ages = [20, 34, 18, 27];   // can't use echo since it returns a string
-// print_r($ages);   // print readeable
-
-$ages[1] = 22;   // modify the array for a particular index
-// print_r($ages); 
-
-$ages[] = 44;    // add a new data to the array
-// print_r($ages)
-
-array_push($ages, 70);    // add a new data to the end of the array. 
-// print_r($ages);
-
-// echo count($ages);
-
-
+$popped = array_pop($blogs2);     // POP THE LAST ARRAY AND STORE.
+print_r($popped);
 
 
-//  // associative arrays:       these are key value pairs
-
-$ninjasOne = ['shaun'=>'black', 'mario'=>'orange', 'luigi'=>'red'];
-// print_r($ninjasOne);
-
-// echo $ninjasOne['mario'];    // access a value using its key
-
-$ninjasTwo = array('bowser'=>'green', 'peach'=>'yellow');
-// print_r($ninjasTwo);
-
-$ninjasTwo['ball'] = 'grey';    // add a new value
-// print_r($ninjasTwo);
-
-$ninjasTwo['peach'] = 'blue';    // override or modify a value
-// print_r($ninjasTwo);
-
-// echo count($ninjasOne);
-
-$totalNinjas = array_merge($ninjasOne, $ninjasTwo);
-print_r($totalNinjas);
-
-
-
-
-// // multidimensional arrays
 ?>
 
 <html>
