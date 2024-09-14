@@ -1,6 +1,6 @@
 <?php
 
-//  //////       CONDITIONAL STATEMENT
+//  //////       BREAK AND CONTINUE
 
 $products = [
     [
@@ -31,15 +31,23 @@ $products = [
 
 foreach($products as $product){
     $productName = $product['product_name'];
+    $productPrice = $product['price'];
 
-    if ($product['price'] < 50){
-        echo "$productName is cheap <br/ >";
-    }elseif($product['price'] < 500 && $product['price'] > 350){
-        echo "$productName is a bit expensive <br/ >";
-    }else{
-        echo "$productName is expensive <br/ >";
+    if($productName === 'Monitor'){
+        break;   // stop the loop
     }
+
+    if($productPrice === 25){
+        continue;    // don't return the product with price at 15 and then continue the loop
+    }
+
+    echo "$productName is seen before Monitor.  <br />";
+    
+
 }
+
+
+echo "loop stopped as Monitor has been seen. <br />";
 
 
 
