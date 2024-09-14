@@ -1,55 +1,29 @@
 <?php
 
-//  //////       BREAK AND CONTINUE
+//  //////       FUNCTIONS
+// /// // BLOCK OF CODES THAT CAN BE EXECUTED ONCE TO DO SOMETHING.
 
-$products = [
-    [
-        'product_name' => 'Laptop',
-        'price' => 1200
-    ],
-    [
-        'product_name' => 'Mouse', 
-        'price' => 25
-    ],
-    [
-        'product_name' => 'Keyboard',
-        'price' => 45
-    ],
-    [
-        'product_name' => 'Monitor',
-        'price' => 300
-    ],
-    [
-        'product_name' => 'USB Cable',
-        'price' => 8
-    ],
-    [
-        'product_name' => 'Adapter',
-        'price' => 430
-    ]
-];
-
-foreach($products as $product){
-    $productName = $product['product_name'];
-    $productPrice = $product['price'];
-
-    if($productName === 'Monitor'){
-        break;   // stop the loop
-    }
-
-    if($productPrice === 25){
-        continue;    // don't return the product with price at 15 and then continue the loop
-    }
-
-    echo "$productName is seen before Monitor.  <br />";
-    
-
+function personName(){    //   empty function
+    echo 'Hello Developer <br />';
 }
 
+personName();
 
-echo "loop stopped as Monitor has been seen. <br />";
 
 
+function getName($name, $time = 'morning'){     // function with parameter and also default value
+    echo "Hello $name it's $time <br />";
+}
+
+getName('mario');     // calling the function passing an argument
+
+
+
+function formatProduct($product){     // using return
+   return "{$product['name']} cost \${$product['price']} to buy <br />";
+}
+
+echo formatProduct(['name' => 'Apple', 'price' => 2.99]);
 
 
 
