@@ -1,29 +1,41 @@
 <?php
 
-//  //////       FUNCTIONS
-// /// // BLOCK OF CODES THAT CAN BE EXECUTED ONCE TO DO SOMETHING.
+//  //////       VRIABLE SCOPE
+// /// // GLOBAL SCOPE
 
-function personName(){    //   empty function
-    echo 'Hello Developer <br />';
+$name = 'Mario';       // variable created outside a function or in the file can be accesed globally.
+
+function personName(){   
+
+    global $name;                // use the keyword global.
+    // $name = 'Yoshi';            // overide the global variable value
+    echo "Hello $name <br />";
+
 }
 
 personName();
+echo $name . '<br \>';              // if the global variable value has be overidden, this will echo out the overidden data.
 
 
-
-function getName($name, $time = 'morning'){     // function with parameter and also default value
-    echo "Hello $name it's $time <br />";
+function sayBye($name){              // local params
+    $name ='Jyu';          
+    echo "bye $name <br />";
 }
 
-getName('mario');     // calling the function passing an argument
+sayBye($name);                      // passing the global variable as the argument of the function.
 
 
 
-function formatProduct($product){     // using return
-   return "{$product['name']} cost \${$product['price']} to buy <br />";
+//////            LOCAL SCOPE
+
+function personAge(){
+
+    $age = 26;     // variable created inside the function can only be used inside the function making it a local variable
+    echo "you're $age years old <br />";
+
 }
 
-echo formatProduct(['name' => 'Apple', 'price' => 2.99]);
+personAge();
 
 
 
