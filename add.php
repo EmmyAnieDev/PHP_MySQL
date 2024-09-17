@@ -1,23 +1,30 @@
 <?php
 
-// check if any has been sent/set via the GET/POST method
 
-// if(isset($_GET['submit'])){       // Check if the form has been submitted by checking if the 'submit' button was clicked 
-//     echo $_GET['email'];
-//     echo $_GET['title'];
-//     echo $_GET['ingredients'];
-// }
-
+// check if submit is clicked or set.
 if(isset($_POST['submit'])){    
-    
-    // Use htmlspecialchars to convert special characters in the input to HTML entities
-    // This prevents XSS (Cross-Site Scripting) attacks by escaping characters like <, >, &, etc.
-    // For example, if the user enters "<script>", it will be displayed as "&lt;script&gt;" instead of being executed as code
 
-    echo htmlspecialchars($_POST['email']);   
-    echo htmlspecialchars($_POST['title']);
-    echo htmlspecialchars($_POST['ingredients']);
-}
+    // check email
+    if(empty($_POST['email'])){
+        echo 'An email is required!';  
+    }else{
+        echo htmlspecialchars($_POST['email']);
+    }
+
+    // check title
+    if(empty($_POST['title'])){
+        echo 'A title is required!';  
+    }else{
+        echo htmlspecialchars($_POST['title']);
+    }
+
+    // check ingredients
+    if(empty($_POST['ingredients'])){
+        echo 'At least one ingredient is required!';  
+    }else{
+        echo htmlspecialchars($_POST['ingredients']);
+    }
+}  // end of post check
 
 
 
