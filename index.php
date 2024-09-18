@@ -56,7 +56,11 @@
                 <div class="card z-depth-0">
                     <div class="card-content center">
                         <h6><?php echo htmlspecialchars($pizza['title']); ?></h6>
-                        <div><?php echo htmlspecialchars($pizza['ingredients']); ?></div>
+                        <ul>
+                            <?php foreach(explode(',', $pizza['ingredients']) as $ingridient){ ?>
+                                <li><?php echo htmlspecialchars($ingridient); ?></li>
+                            <?php } ?>
+                        </ul>
                     </div>
                     <div class="card-action right-align">
                         <a href="#" class="brand-text">more info</a>
