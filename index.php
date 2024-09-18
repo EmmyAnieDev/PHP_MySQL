@@ -21,6 +21,23 @@
         echo "Connection to database failed. Please try again later.";
     }
 
+    // write query to select particular column from pizzas's table
+    $sql = 'SELECT title, ingredients, id FROM pizzas';
+
+    // make query & get result
+    $result = mysqli_query($conn, $sql);
+
+    // fetch the resulting rows as an associate array
+    $pizzas = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    // free results from memory
+    mysqli_free_result($result);
+
+    // end connection
+    mysqli_close($conn);
+
+    print_r($pizzas);
+
 ?>
 
 
