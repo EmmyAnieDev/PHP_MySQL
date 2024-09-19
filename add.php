@@ -4,6 +4,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+include 'config/db_connect.php';
+
 $errors = array('email'=>'', 'title'=>'', 'ingredients'=>'');
 $title = $ingredients = $email = '';
 
@@ -43,7 +45,24 @@ if(isset($_POST['submit'])){
     if(array_filter($errors)){
         echo "error in form!";
     }else{
-        header('Location: index.php');
+
+        // Sanitize user input to prevent SQL injection before sending to database.
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $title = mysqli_real_escape_string($conn, $_POST['title']);
+        $ingredients = mysqli_real_escape_string($conn, $_POST['ingredients']);
+
+        // create sql
+        $sql = "INSERT INTO pizzas (title, email, ingredients) VALUES('$title', '$email', '$ingredients')";
+
+        // save to the database
+        if(mysqli_query($conn, $sql)){
+            // if success
+            header('Location: index.php');
+        }else{
+            // if failed
+            echo "query error: " .  mysqli_error($conn);
+        }
+
     }
 }  // end of post check
 
