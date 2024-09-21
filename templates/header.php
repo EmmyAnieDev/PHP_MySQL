@@ -16,7 +16,8 @@
 
 
     // We can access $_SESSION['name'] anywhere because $_SESSION is a superglobal array
-    $name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Guest';
+    // using null coalescing
+    $name = $_SESSION['name'] ?? 'Guest';
 
 
 
