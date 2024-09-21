@@ -12,6 +12,7 @@
 
         // Unset all session variables (clear the session)
         session_unset();
+
     }
 
 
@@ -20,6 +21,8 @@
     $name = $_SESSION['name'] ?? 'Guest';
 
 
+    // set cookie
+    $gender = $_COOKIE['gender'] ?? 'unknown';
 
 
 ?>
@@ -49,7 +52,8 @@
             <div class="container">
                 <a href="index.php" class="brand-logo brand-text">Ninja Pizza</a>
                 <ul id="nav-mobile" class="right hand-on-small-and-down">
-                    <li class="grey-text"> Hello <?php echo htmlspecialchars($name); ?></li>
+                    <li class="grey-text"> Hello <?php echo htmlspecialchars($name) ?></li>
+                    <li class="grey-text">(<?php echo  htmlspecialchars($gender)?>)</li>
                     <li><a href="add.php" class="btn brand z-depth-0">Add a Pizza</a></li>
                 </ul>
             </div>
