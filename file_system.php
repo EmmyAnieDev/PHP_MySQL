@@ -35,7 +35,7 @@
 
 
 
-        // opening a file for reading, use 'r' to indicate read online
+        // opening a file for reading, use 'r' to indicate read only
         $handle = fopen($file, 'r');
 
         // read the file
